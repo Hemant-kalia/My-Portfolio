@@ -1,0 +1,93 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 10vh;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+h2 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 0 20px 0; 
+    justify-content: start;
+}
+
+.project-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 570px;
+    width: 20vw;
+    margin-right: 30px;
+    /* border: 2px solid black; */
+}
+
+.project-card:hover {
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.project-card img {
+    height: 100%;
+}
+
+.project-label {
+    padding: 2px 16px;
+}
+
+/* Responsive Design */
+
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }  
+
+  p {
+    font-size: 14px;
+  }  
+
+  .project {
+    padding-top: 15vh;
+    width: 90vw;
+    margin-left: 5vw;
+    min-height: 120vh;
+  }
+
+  .projects-container {
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 80px;
+  }
+
+   .project-label {
+    font-size: 14px;
+    padding: 10px 0;
+   }  
+
+}
+
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project {
+    width: 85vw;
+    margin-left: 7.5vw;
+  }
+
+}
