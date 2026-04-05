@@ -20,14 +20,6 @@ function Project() {
             </div>
           </div>
 
-          <div className="project-card">
-            <img src={card1} alt="Project 2" />
-            <div className="project-label">
-              <h3>Project 2</h3>
-              <p>Portfolio Website</p>
-            </div>
-          </div>
-
         </div>
       </div>
     
