@@ -33,7 +33,7 @@ header nav {
   justify-content: space-evenly;
 }
 
-header nav .Link {
+.link, link-active {
   text-decoration: none;
   color: white;
   font-weight: 600;
@@ -41,7 +41,11 @@ header nav .Link {
   padding-right: 1.2em;
 }
 
-.Link:hover {
+.link:hover {
   cursor: pointer;
+  color: #A5ED59;
+}
+
+.active {
   color: #A5ED59;
 }

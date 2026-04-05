@@ -1,9 +1,9 @@
 import './Styles/Header.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from './MyComponents/Home';
-import About from './MyComponents/About';
-import Contact from './MyComponents/Contact';
-import Project from './MyComponents/Project';
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import Project from './Project';
 
 function Header() {
     return (
@@ -13,10 +13,33 @@ function Header() {
                 <header>
                     <h2>MY PORTFOLIO</h2>
                     <nav className="nav-links" >
-                        <Link className='Link' to="/">Home</Link>
-                        <Link className='Link' to="/about">About</Link>
-                        <Link className='Link' to="/contact">Contact</Link>
-                        <Link className='Link' to="/projects">Projects</Link>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => isActive ? "link active" : "link"}
+                        >
+                            Home
+                        </NavLink>
+
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) => isActive ? "link active" : "link"}
+                        >
+                            About
+                        </NavLink>
+
+                        <NavLink
+                            to="/contact"
+                            className={({ isActive }) => isActive ? "link active" : "link"}
+                        >
+                            Contact
+                        </NavLink>
+
+                        <NavLink
+                            to="/projects"
+                            className={({ isActive }) => isActive ? "link active" : "link"}
+                        >
+                            Projects
+                        </NavLink>
                     </nav>
                 </header>
 
@@ -29,7 +52,9 @@ function Header() {
                 </Routes>
             </BrowserRouter>
 
-            
+
         </div>
     );
 }
+
+export default Header;
