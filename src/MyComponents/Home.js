@@ -1,6 +1,5 @@
 import React from 'react';
 import './Styles/Home.css';
-import '../index.css';
 import { useNavigate } from 'react-router-dom';
 import ProfilePhoto from '../Images/Profile photo.jpeg';
 

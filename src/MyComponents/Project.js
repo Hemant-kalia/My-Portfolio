@@ -1,6 +1,5 @@
 import React from 'react';
 import './Styles/Project.css';
-import '../index.css';
 import card1 from '../Images/card1.jpg'; 
 
 function Project() {

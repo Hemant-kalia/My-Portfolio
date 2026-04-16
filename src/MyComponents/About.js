@@ -1,6 +1,5 @@
 import React from 'react';
 import './Styles/About.css';
-import '../index.css';
 import resume from './My-Resume.pdf';
 
 function About() {
