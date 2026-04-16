@@ -91,7 +91,7 @@ button {
 /* Responsive Design */
 
 
-/* tablet-first approach */
+/* mobile-first approach */
 @media (max-width: 768px) {
     .contact {
         padding-top: 15vh;
@@ -115,8 +115,13 @@ button {
         width: 100%;
     }
 
-    h2 {
+    .contact_right h2 {
         font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    h2 {
+        font-size: 1rem;
     }
 
     .contact_lables {

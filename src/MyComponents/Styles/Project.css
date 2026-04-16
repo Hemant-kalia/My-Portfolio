@@ -55,13 +55,16 @@ p {
 
   p {
     font-size: 14px;
+    justify-content: flex-start;
   }  
 
   .project {
-    padding-top: 15vh;
+    padding-top: 0vh;
+    margin-top: 0;
     width: 90vw;
     margin-left: 5vw;
-    min-height: 120vh;
+    min-height: 100vh;
+    justify-content: center;
   }
 
   .projects-container {

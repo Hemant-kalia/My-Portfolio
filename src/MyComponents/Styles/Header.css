@@ -49,3 +49,21 @@ header nav {
 .active {
   color: #A5ED59;
 }
+
+@media (max-width: 768px){
+  header {
+    height: 10vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+
+  header h2 {
+    font-size: 1.4em;
+  }
+}
