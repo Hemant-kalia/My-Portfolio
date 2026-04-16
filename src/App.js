@@ -1,5 +1,4 @@
 import './App.css';
-import './index.css';
 import './MyComponents/Styles/Header.css';
 import './MyComponents/Styles/Footer.css';
 import './MyComponents/Styles/Home.css';
