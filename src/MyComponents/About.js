@@ -1,6 +1,6 @@
 import React from 'react';
 import './Styles/About.css';
-import resume from './My-Resume.pdf';
+import resume from './Hemant-resume.pdf';
 
 function About() {
   return (
