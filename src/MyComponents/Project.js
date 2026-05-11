@@ -24,16 +24,22 @@ function Project() {
           </div>
         </Link>
 
-
-        <div className="project-card">
-          {/* <img src={card1} alt="Project 1" /> */}
-          <div className="project-label">
-            <h3>Project 2</h3>
-            <p>ML-Powered Resume Screener -</p>
-            <span>Ranks resumes against job descriptions using NLP and ML techniques.
-            </span>
+        {/* <a
+          href="https://resume-screener-heeb.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit" }}
+        > */}
+          <div className="project-card">
+            {/* <img src={card1} alt="Project 1" /> */}
+            <div className="project-label">
+              <h3>Project 2</h3>
+              <p>ML-Powered Resume Screener -</p>
+              <span>Ranks resumes against job descriptions using NLP and ML techniques.
+              </span>
+            </div>
           </div>
-        </div>
+        {/* </a> */}
 
         <div className="project-card">
           {/* <img src={card1} alt="Project 1" /> */}
