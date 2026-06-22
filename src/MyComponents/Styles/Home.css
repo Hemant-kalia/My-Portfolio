@@ -1,220 +1,242 @@
+/* ─── HOME PAGE ─────────────────────────────────────── */
 .home {
-    margin: 0 auto;
-    padding-top: 10vh;
-    min-height: 100vh;
-    width: 80vw;
-    max-width: 1200px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0 auto;
+  padding: 100px clamp(20px, 5vw, 60px) 80px;
+  min-height: calc(100vh - var(--header-h));
+  width: 100%;
+  max-width: var(--max-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 }
 
+/* ─── HERO SECTION ───────────────────────────────────── */
 .main-home {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
 }
 
+/* Text block */
+.main-home p {
+  flex: 1;
+  min-width: 0;
+  color: var(--clr-text);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+/* Decorative tag above name */
+.main-home p::before {
+  content: '// hello world';
+  display: block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+  color: var(--clr-accent-dim);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Profile photo */
 .main-home img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #A5ED59;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: clamp(200px, 22vw, 300px);
+  height: clamp(200px, 22vw, 300px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-accent);
+  box-shadow:
+    0 0 0 8px var(--clr-accent-glow),
+    var(--shadow-glow),
+    var(--shadow-card);
+  flex-shrink: 0;
+  transition: var(--transition);
 }
 
-p {
-    color: white;
-    font-size: 1.5em;
+.main-home img:hover {
+  box-shadow:
+    0 0 0 12px var(--clr-accent-glow),
+    0 0 50px rgba(165, 237, 89, 0.25),
+    var(--shadow-card);
+  transform: scale(1.03);
 }
 
+/* Name highlight */
 .span1 {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #A5ED59;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  color: var(--clr-accent);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
 }
 
+/* Role highlights */
 .span2 {
-    color: #A5ED59;
+  color: var(--clr-accent);
+  font-weight: 600;
+  font-style: italic;
 }
 
-button {
-    background-color: #A5ED59;
-    color: black;
-    border: none;
-    padding: 15px 25px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
+/* ─── FEATURED PROJECT CARD ──────────────────────────── */
 .featured-project {
-    background-color: #659951;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px;
-    width: 60vw;
-    max-width: 900px;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 780px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  transition: var(--transition);
 }
+
+.featured-project:hover {
+  border-color: rgba(165, 237, 89, 0.4);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(165, 237, 89, 0.16);
+  transform: translateY(-4px);
+}
+
+.featured-project h2 {
+  color: var(--clr-accent);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.featured-project p {
+  color: var(--clr-text-muted);
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  line-height: 1.7;
+}
+
+/* ─── CTA BUTTON ─────────────────────────────────────── */
+button {
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accent-dim) 100%);
+  color: #050d1a;
+  border: none;
+  padding: 14px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(165, 237, 89, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+button:hover::before { left: 100%; }
 
 button:hover {
-    background-color: #7cd31f;
-    transition: 0.3s ease-in-out;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(165, 237, 89, 0.45);
 }
 
+button:active {
+  transform: translateY(0);
+}
 
-
-/* Responsive Design */
-
-
-/* Mobile-first approach */
-@media (max-width: 768px) {
-  .home {
-    padding-top: 12vh;
-    width: 90vw;
-    margin: 0 auto;
-    min-height: 120vh;
-  }
-
+/* ─── TABLET (769px – 1024px) ───────────────────────── */
+@media (max-width: 1024px) {
   .main-home {
-    flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
 
   .main-home img {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ─── MOBILE + SMALL TABLET (≤768px) ───────────────── */
+@media (max-width: 768px) {
+  .home {
+    padding: 30px 20px 60px;
+    gap: 40px;
+    /* header is ~90px when stacked on mobile */
+    padding-top: 30px;
   }
 
-  p {
-    font-size: 1.2em;
+  .main-home {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 28px;
     text-align: center;
   }
 
-  .featured-project {
-    width: 90vw;
-    margin: 20px auto;
-    text-align: start;
+  .main-home p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.75;
   }
 
-  .featured-project p {
-    text-align: left;
-    margin-top: 1em;
+  .main-home p::before {
+    text-align: center;
+  }
+
+  .main-home img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .featured-project {
+    padding: 22px 20px;
+    width: 100%;
+  }
+
+  .featured-project h2 {
+    font-size: 1.1rem;
   }
 
   button {
     width: 100%;
-    font-size: 1em;
+    padding: 14px 24px;
   }
 }
 
-/* Tablet view */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .home {
-    width: 85vw;
-    margin: 0 auto;
-  }
-
-  .main-home img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .featured-project {
-    width: 75vw;
-  }
-}
-
-/* Large Desktop / 2K Viewport */
+/* ─── 2K (≥2000px) ──────────────────────────────────── */
 @media (min-width: 2000px) {
   .home {
-    width: 80vw;
-    max-width: 1800px;
-    padding-top: 12vh;
-  }
-
-  .main-home {
+    max-width: 1600px;
+    padding: 140px 80px 100px;
     gap: 80px;
-    margin-bottom: 40px;
   }
-
-  .main-home img {
-    width: 380px;
-    height: 380px;
-    border-width: 6px;
-  }
-
-  p {
-    font-size: 2em;
-  }
-
-  .featured-project {
-    width: 60vw;
-    max-width: 1400px;
-    padding: 40px;
-    margin: 60px;
-  }
-
-  .featured-project h2 {
-    font-size: 2.5em;
-  }
-
-  button {
-    padding: 22px 40px;
-    font-size: 28px;
-    border-radius: 8px;
-  }
+  .main-home img { width: 380px; height: 380px; }
+  .main-home p { font-size: 1.5rem; }
+  .featured-project { max-width: 1100px; padding: 48px 56px; }
+  .featured-project h2 { font-size: 1.9rem; }
+  button { padding: 20px 56px; font-size: 1.3rem; }
 }
 
-/* Ultra Large / 4K Viewport */
+/* ─── 4K (≥3000px) ──────────────────────────────────── */
 @media (min-width: 3000px) {
   .home {
-    width: 80vw;
-    max-width: 2600px;
-    padding-top: 15vh;
-  }
-
-  .main-home {
+    max-width: 2400px;
+    padding: 180px 120px 140px;
     gap: 120px;
-    margin-bottom: 60px;
   }
-
-  .main-home img {
-    width: 500px;
-    height: 500px;
-    border-width: 8px;
-  }
-
-  p {
-    font-size: 2.8em;
-  }
-
-  .featured-project {
-    width: 60vw;
-    max-width: 1800px;
-    padding: 60px;
-    margin: 80px;
-  }
-
-  .featured-project h2 {
-    font-size: 3.5em;
-  }
-
-  button {
-    padding: 30px 60px;
-    font-size: 38px;
-    border-radius: 12px;
-  }
+  .main-home img { width: 520px; height: 520px; border-width: 5px; }
+  .main-home p { font-size: 2.1rem; }
+  .featured-project { max-width: 1600px; padding: 64px 80px; }
+  .featured-project h2 { font-size: 2.8rem; }
+  button { padding: 28px 80px; font-size: 1.8rem; }
 }
-

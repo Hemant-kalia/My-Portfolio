@@ -1,7 +1,6 @@
-* {
+/* App.css — global reset only. Component styles live in their own CSS files. */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Note: Redundant media queries for header and footer have been moved to Header.css and Footer.css to avoid specificity conflicts. */

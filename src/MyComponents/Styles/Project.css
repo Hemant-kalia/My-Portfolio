@@ -1,183 +1,188 @@
+/* ─── PROJECTS PAGE ──────────────────────────────────── */
 .project {
-    display: flex;
-    flex-direction: column;
-    padding: 10vh;
-    min-height: 100vh;
-    z-index: 1;
-    max-width: 1200px;
-    width: 80vw;
-    margin: 0 auto;
+  margin: 0 auto;
+  padding: 100px clamp(20px, 5vw, 60px) 80px;
+  min-height: calc(100vh - var(--header-h));
+  width: 100%;
+  max-width: var(--max-w);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Page section tag */
+.project::before {
+  content: '// my_work.tsx';
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--clr-accent-dim);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
 }
 
 h2 {
-    color: white;
+  color: var(--clr-text);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 h3 {
-  color: white;
+  color: var(--clr-accent);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 p {
-    color: white;
+  color: var(--clr-text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.88rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
+/* Subtitle below page heading */
+.project > p {
+  color: var(--clr-text-muted);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 8px;
+}
+
+/* ─── GRID ───────────────────────────────────────────── */
 .projects-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 20px 0; 
-    justify-content: flex-start;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  padding: 24px 0 0;
+  width: 100%;
 }
 
+/* ─── PROJECT CARD ───────────────────────────────────── */
 .project-card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    height: 280px;
-    width: 320px;
-    padding: 20px;
-    background-color: black;
-    opacity: 0.75;
-    border: 2px solid #A5ED59;
-    border-radius: 10px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  min-height: 220px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-span {
-  color: white;
-  font-size: 18px;
+/* Accent top strip */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent-dim));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
 .project-card:hover {
-    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.2);
-    cursor: pointer;
+  border-color: rgba(165, 237, 89, 0.4);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 30px rgba(165, 237, 89, 0.12);
+  transform: translateY(-6px);
 }
 
 .project-card img {
-    height: 100%;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
 }
 
 .project-label {
-    padding: 2px 16px;
+  padding: 24px 24px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Responsive Design */
+/* Tech tag style for <p> inside cards */
+.project-label > p {
+  color: var(--clr-accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2px;
+}
 
+/* Description span */
+span {
+  color: var(--clr-text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  line-height: 1.65;
+  display: block;
+}
 
-/* Mobile-first approach */
+/* ─── MOBILE (≤768px) ───────────────────────────────── */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 24px;
-  }  
-
-  p {
-    font-size: 14px;
-    justify-content: flex-start;
-  }  
-
   .project {
-    padding-top: 10vh;
-    margin-top: 0;
-    width: 90vw;
-    margin-left: 5vw;
-    min-height: 100vh;
-    justify-content: center;
+    padding: 30px 20px 60px;
   }
 
   .projects-container {
-    justify-content: center;
-    width: 100%;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .project-card {
-    width: 100%;
-    height: 260px;
-    margin-bottom: 20px; /* Reduced from 80px to prevent huge gaps */
+    min-height: 200px;
   }
 
-   .project-label {
-    font-size: 14px;
-    padding: 10px 0;
-   }  
-
+  h2 { font-size: 1.8rem; }
 }
 
-/* Tablet view */
+/* ─── TABLET (769px – 1024px) ───────────────────────── */
 @media (min-width: 769px) and (max-width: 1024px) {
   .project {
-    width: 85vw;
-    margin: 0 auto;
-  }
-  
-  .projects-container {
-    justify-content: center;
-    gap: 20px;
+    padding: 80px clamp(20px, 4vw, 40px) 60px;
   }
 
-  .project-card {
-    width: 320px;
-    height: 280px;
-    margin-right: 0;
+  .projects-container {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
   }
 }
 
-/* Large Desktop / 2K Viewport */
+/* ─── 2K (≥2000px) ──────────────────────────────────── */
 @media (min-width: 2000px) {
-  .project {
-    max-width: 1800px;
-  }
-  .project h2 {
-    font-size: 3em;
-  }
-  .project p {
-    font-size: 1.6em;
-  }
-  .projects-container {
-    gap: 40px;
-  }
-  .project-card {
-    width: 450px;
-    height: 350px;
-    padding: 30px;
-  }
-  .project-card h3 {
-    font-size: 2.2em;
-  }
-  .project-card p {
-    font-size: 1.5em;
-  }
-  .project-card span {
-    font-size: 1.3em;
-  }
+  .project { max-width: 1800px; padding: 140px 80px 100px; }
+  .projects-container { grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 40px; }
+  .project-card { min-height: 300px; }
+  .project-label { padding: 32px 32px 38px; }
+  h2 { font-size: 3.5rem; }
+  h3 { font-size: 1.8rem; }
+  span { font-size: 1.3rem; }
+  .project-label > p { font-size: 1rem; }
 }
 
-/* Ultra Large / 4K Viewport */
+/* ─── 4K (≥3000px) ──────────────────────────────────── */
 @media (min-width: 3000px) {
-  .project {
-    max-width: 2600px;
-  }
-  .project h2 {
-    font-size: 4.5em;
-  }
-  .project p {
-    font-size: 2.4em;
-  }
-  .projects-container {
-    gap: 60px;
-  }
-  .project-card {
-    width: 600px;
-    height: 480px;
-    padding: 40px;
-    border-width: 4px;
-  }
-  .project-card h3 {
-    font-size: 3em;
-  }
-  .project-card p {
-    font-size: 2.2em;
-  }
-  .project-card span {
-    font-size: 1.8em;
-  }
+  .project { max-width: 2600px; padding: 180px 120px 140px; }
+  .projects-container { grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); gap: 60px; }
+  .project-card { min-height: 440px; }
+  .project-label { padding: 48px 48px 56px; }
+  h2 { font-size: 5rem; }
+  h3 { font-size: 2.6rem; }
+  span { font-size: 1.9rem; }
+  .project-label > p { font-size: 1.4rem; }
 }

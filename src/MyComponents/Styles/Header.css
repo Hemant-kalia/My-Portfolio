@@ -1,111 +1,144 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ─── HEADER ────────────────────────────────────────── */
 header {
   width: 100%;
-  height: 8vh;
-  background-color: black;
+  height: var(--header-h);
+  background: rgba(5, 13, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--clr-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 clamp(20px, 5vw, 80px);
   position: sticky;
-  top: 0px;
-  left: 0px;
-  opacity: 0.75;
-  z-index: 100;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Brand / Logo */
 header h2 {
-  color: #A5ED59;
-  font-weight: 700;
-  font-size: 1.8em;
-  letter-spacing: 2px;
-  word-spacing: 3px;
+  color: var(--clr-accent);
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
 }
 
+header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-accent), transparent);
+  border-radius: 2px;
+}
+
+/* Nav container */
 header nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 0;
 }
 
-.link, link-active {
+/* Nav links */
+.link {
+  position: relative;
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 1.2em;
-  padding-right: 1.2em;
+  color: var(--clr-text-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--clr-accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 .link:hover {
-  cursor: pointer;
-  color: #A5ED59;
+  color: var(--clr-accent);
 }
 
-.active {
-  color: #A5ED59;
+.link:hover::after {
+  width: 60%;
 }
 
-@media (max-width: 768px){
+.link.active {
+  color: var(--clr-accent);
+  background: var(--clr-accent-glow);
+}
+
+.link.active::after {
+  width: 60%;
+}
+
+/* ─── MOBILE HEADER ──────────────────────────────────── */
+@media (max-width: 768px) {
   header {
     height: auto;
-    padding: 15px 10px;
-    display: flex;
+    padding: 14px 20px;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+  }
+
+  header h2::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-links {
-    margin-top: 5px;
-    padding-left: 0px;
-    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 4px;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
-  .link, link-active {
-    padding-right: 0px;
-    font-size: 1.1em;
-  }
-
-  header h2 {
-    font-size: 1.4em;
-    text-align: center;
+  .link {
+    font-size: 0.85rem;
+    padding: 6px 14px;
   }
 }
 
-/* Large Desktop / 2K Viewport */
+/* ─── 2K DISPLAYS ────────────────────────────────────── */
 @media (min-width: 2000px) {
   header {
-    height: auto;
-    padding: 30px 80px;
+    height: 90px;
+    padding: 0 120px;
   }
-  header h2 {
-    font-size: 2.6em;
-  }
-  .link, link-active {
-    font-size: 1.6em;
-    padding-right: 1.5em;
-  }
+  header h2 { font-size: 2.2rem; }
+  .link { font-size: 1.3rem; padding: 10px 24px; }
 }
 
-/* Ultra Large / 4K Viewport */
+/* ─── 4K DISPLAYS ────────────────────────────────────── */
 @media (min-width: 3000px) {
   header {
-    height: auto;
-    padding: 45px 120px;
+    height: 120px;
+    padding: 0 180px;
   }
-  header h2 {
-    font-size: 3.5em;
-    letter-spacing: 3px;
-  }
-  .link, link-active {
-    font-size: 2.2em;
-    padding-right: 2em;
-  }
+  header h2 { font-size: 3rem; letter-spacing: 4px; }
+  .link { font-size: 1.8rem; padding: 14px 32px; }
 }

@@ -1,110 +1,149 @@
+/* ─── ABOUT PAGE ─────────────────────────────────────── */
 .about {
-    margin: 0 auto;
-    padding-top: 15vh;
-    padding-bottom: 10vh;
-    min-height: 100vh;
-    width: 80vw;
-    max-width: 1000px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0 auto;
+  padding: 100px clamp(20px, 5vw, 60px) 80px;
+  min-height: calc(100vh - var(--header-h));
+  width: 100%;
+  max-width: var(--max-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Section badge */
+.main-about::before {
+  content: '// about_me.json';
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--clr-accent-dim);
+  letter-spacing: 1px;
+  align-self: flex-start;
+}
+
+/* Section heading */
+h2 {
+  color: var(--clr-text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
 }
 
 .heading {
-    color: #A5ED59;
-    font-size: 40px;
-    font-weight: bold;
+  color: var(--clr-accent);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
-h2 {
-    color: white;
-}
-
+/* About body text */
 p {
-    color: white;
-    font-size: 1.4em;
-    line-height: 1.6;
-    text-align: justify;
+  color: var(--clr-text-muted);
+  font-family: 'Inter', sans-serif;
 }
 
+.main-about > p {
+  color: var(--clr-text);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.9;
+  text-align: center;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.main-about > p:hover {
+  border-color: rgba(165, 237, 89, 0.35);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+}
+
+/* Resume button — matches the filled gradient style of all other CTAs */
 .resume-btn {
-    background-color: #A5ED59;
-    color: black; /* Make text black for readability on A5ED59 green */
-    border: none;
-    padding: 15px 25px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
+  background: linear-gradient(135deg, var(--clr-accent) 0%, var(--clr-accent-dim) 100%);
+  color: #050d1a;
+  border: none;
+  padding: 14px 36px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(165, 237, 89, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.resume-btn:hover::before {
+  left: 100%;
 }
 
 .resume-btn:hover {
-    background-color: #7cd31f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(165, 237, 89, 0.45);
 }
 
-/* Responsive Design */
+.resume-btn:active {
+  transform: translateY(0);
+}
 
-
-/* mobile-first approach */
+/* ─── MOBILE (≤768px) ───────────────────────────────── */
 @media (max-width: 768px) {
-    .about {
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-        width: 90vw;
-        margin: 0 auto;
-        min-height: 100vh;
-    }
-    
-    p {
-        font-size: 1.1em;
-        text-align: center;
-    }
-    
-    .resume-btn {
-        width: 100%;
-        font-size: 1.1em;
-    }
+  .about {
+    padding: 30px 20px 60px;
+  }
+
+  .main-about { gap: 28px; }
+
+  .main-about > p {
+    font-size: 0.97rem;
+    padding: 24px 20px;
+    text-align: left;
+  }
+
+  .resume-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
 }
 
-/* Large Desktop / 2K Viewport */
+/* ─── 2K (≥2000px) ──────────────────────────────────── */
 @media (min-width: 2000px) {
-  .about {
-    max-width: 1600px;
-    padding-top: 15vh;
-  }
-  .about p {
-    font-size: 2em;
-  }
-  .resume-btn {
-    padding: 22px 40px;
-    font-size: 28px;
-    border-radius: 8px;
-  }
+  .about { max-width: 1400px; padding: 140px 80px 100px; }
+  .main-about { max-width: 1100px; gap: 60px; }
+  .main-about > p { font-size: 1.5rem; padding: 52px 60px; }
+  .resume-btn { padding: 20px 60px; font-size: 1.3rem; }
 }
 
-/* Ultra Large / 4K Viewport */
+/* ─── 4K (≥3000px) ──────────────────────────────────── */
 @media (min-width: 3000px) {
-  .about {
-    max-width: 2200px;
-    padding-top: 18vh;
-  }
-  .about p {
-    font-size: 2.8em;
-  }
-  .resume-btn {
-    padding: 30px 60px;
-    font-size: 38px;
-    border-radius: 12px;
-  }
+  .about { max-width: 2000px; padding: 180px 120px 140px; }
+  .main-about { max-width: 1600px; gap: 80px; }
+  .main-about > p { font-size: 2.1rem; padding: 72px 80px; }
+  .resume-btn { padding: 28px 80px; font-size: 1.8rem; }
 }

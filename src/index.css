@@ -1,30 +1,67 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+*, *::before, *::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #050d1a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ─── CSS DESIGN TOKENS ─────────────────────────────── */
+:root {
+  --clr-accent:       #a5ed59;
+  --clr-accent-dim:   #7cd31f;
+  --clr-accent-glow:  rgba(165, 237, 89, 0.18);
+  --clr-bg:           #050d1a;
+  --clr-bg-glass:     rgba(8, 18, 36, 0.75);
+  --clr-surface:      rgba(255, 255, 255, 0.04);
+  --clr-border:       rgba(165, 237, 89, 0.2);
+  --clr-text:         #e2e8f0;
+  --clr-text-muted:   #94a3b8;
+  --header-h:         70px;
+  --radius-lg:        16px;
+  --radius-md:        10px;
+  --radius-sm:        6px;
+  --shadow-glow:      0 0 30px rgba(165, 237, 89, 0.12);
+  --shadow-card:      0 8px 32px rgba(0, 0, 0, 0.4);
+  --transition:       all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w:            1200px;
+}
+
+/* ─── ROOT WRAPPER ──────────────────────────────────── */
 #root > .content {
   min-height: 100vh;
-  background: radial-gradient(ellipse at bottom, #50dd63 0%, #030617 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(80, 220, 99, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(165, 237, 89, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #050d1a 0%, #081220 50%, #050d1a 100%);
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
 }
 
 .content {
-  background: radial-gradient(ellipse at bottom, #50dd63 0%, #030617 100%);
+  background: transparent;
   height: auto;
 }
 
+/* Footer wrapper */
 #root > .content > .content {
   margin-top: auto;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, monospace;
 }

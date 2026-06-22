@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="home">
       <div className="main-home">
-        <p>Hello, I'm <span className='span1'>Hemant</span>
+        <p>I'm <span className='span1'>Hemant</span>
           <br />
           <br />
           A <span className='span2'>Frontend Developer</span> and <span className='span2'>Machine Learning Engineer</span> with a passion for building responsive web interfaces and intelligent systems. I specialize in creating seamless user experiences backed by data-driven solutions, using tools like React, Python, and modern ML frameworks.
@@ -21,7 +21,7 @@ function Home() {
         </p>
 
         <img src={ProfilePhoto} alt="Profile-pictuce" />
-        
+
       </div>
 
       <div className="featured-project">
