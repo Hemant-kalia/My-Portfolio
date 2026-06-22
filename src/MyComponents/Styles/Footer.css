@@ -22,3 +22,23 @@ footer p {
   color: white;
   font-size: 1.2em;
 }
+
+/* Large Desktop / 2K Viewport */
+@media (min-width: 2000px) {
+  footer {
+    height: 10vh;
+  }
+  footer p {
+    font-size: 1.8em;
+  }
+}
+
+/* Ultra Large / 4K Viewport */
+@media (min-width: 3000px) {
+  footer {
+    height: 8vh;
+  }
+  footer p {
+    font-size: 2.5em;
+  }
+}

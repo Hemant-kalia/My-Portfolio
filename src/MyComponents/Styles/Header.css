@@ -52,18 +52,60 @@ header nav {
 
 @media (max-width: 768px){
   header {
-    height: 10vh;
-    padding: 10px;
+    height: auto;
+    padding: 15px 10px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
   }
 
   .nav-links {
     margin-top: 5px;
-    padding-left: 20px;
+    padding-left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .link, link-active {
+    padding-right: 0px;
+    font-size: 1.1em;
   }
 
   header h2 {
     font-size: 1.4em;
+    text-align: center;
+  }
+}
+
+/* Large Desktop / 2K Viewport */
+@media (min-width: 2000px) {
+  header {
+    height: auto;
+    padding: 30px 80px;
+  }
+  header h2 {
+    font-size: 2.6em;
+  }
+  .link, link-active {
+    font-size: 1.6em;
+    padding-right: 1.5em;
+  }
+}
+
+/* Ultra Large / 4K Viewport */
+@media (min-width: 3000px) {
+  header {
+    height: auto;
+    padding: 45px 120px;
+  }
+  header h2 {
+    font-size: 3.5em;
+    letter-spacing: 3px;
+  }
+  .link, link-active {
+    font-size: 2.2em;
+    padding-right: 2em;
   }
 }
