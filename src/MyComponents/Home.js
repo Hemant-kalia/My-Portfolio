@@ -1,7 +1,7 @@
 import React from 'react';
 import './Styles/Home.css';
 import { useNavigate } from 'react-router-dom';
-import ProfilePhoto from '../Images/Profile photo.jpeg';
+import ProfilePhoto from '../Images/Profile photo.jpg';
 
 function Home() {
   const navigate = useNavigate();
