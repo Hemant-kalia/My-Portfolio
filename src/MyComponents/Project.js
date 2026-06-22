@@ -1,6 +1,6 @@
 import React from 'react';
 import './Styles/Project.css';
-import card1 from '../Images/card1.jpg';
+// import card1 from '../Images/card1.jpg';
 import { Link } from 'react-router-dom';
 
 function Project() {
