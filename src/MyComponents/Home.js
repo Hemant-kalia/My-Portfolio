@@ -14,7 +14,7 @@ function Home() {
         <p>I'm <span className='span1'>Hemant</span>
           <br />
           <br />
-          A <span className='span2'>Frontend Developer</span> and <span className='span2'>Machine Learning Engineer</span> with a passion for building responsive web interfaces and intelligent systems. I specialize in creating seamless user experiences backed by data-driven solutions, using tools like React, Python, and modern ML frameworks.
+          A <span className='span2'>Frontend Developer</span> and <span className='span2'>Aspiring Machine Learning Engineer</span> with a passion for building responsive web interfaces and intelligent systems. I specialize in creating seamless user experiences backed by data-driven solutions, using tools like React, Python, and modern ML frameworks.
           <br />
           <br />
           Feel free to explore my work and reach out for collaboration or opportunities.
