@@ -24,7 +24,9 @@ function Contact() {
           <p className="contact_lables">
             Email : <a href="mailto:hemantkumar082004@gmail.com" target="_blank" rel="noopener noreferrer">hemantkumar082004@gmail.com</a>
           </p>
-          <p className="contact_lables">Contact : +91 9256475907</p>
+          <p className="contact_lables">Phone No. : +91 9256475907</p>
+          <p className="contact_lables">LinkedIn : <a href="https://www.linkedin.com/in/hemant-kumar-24756928a/" target='_blank'>Hemant's LinkedIn</a></p>
+          
         </div>
         
       </div>
