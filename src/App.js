@@ -12,9 +12,24 @@ import About from './MyComponents/About';
 import Contact from './MyComponents/Contact';
 import Project from './MyComponents/Project';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 function App() {
+  
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    // Calling your FastAPI backend endpoint
+    fetch('http://localhost:8000/')
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage(data.Hello); // Expects {"Hello": "World"}
+      })
+      .catch((err) => console.error('Error fetching data:', err));
+  }, []);
+
+
   return (
     <HashRouter>
 
