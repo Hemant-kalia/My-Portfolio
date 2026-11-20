@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Styles/Contact.css';
 
-const API_URL = 'http://localhost:8000/api/contact';
-
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  'https://hemant-portfolio-5ra8.onrender.com/api/contact';
+  
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
